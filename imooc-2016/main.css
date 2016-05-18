@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+
+    font-family: "Microsoft Yahei";
+    font-size: 1.5625vw;
+}
+html, body {
+    overflow: hidden;
+
+    height: 100%;
+}
+
+/* music */
+
+.music {
+    position: fixed;
+    z-index: 5;
+    top: 3vh;
+    right: 4vw;
+
+    width: 15vw;
+    height: 15vw;
+
+    border: 4px solid #ef1639;
+    border-radius: 50%;
+    background: #fff;
+}
+.music > img:first-of-type {
+    position: absolute;
+    z-index: 1;
+    top: 24%;
+    right: 2.5%;
+
+    width: 28.421%;
+}
+.music > img:last-of-type {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 79%;
+    margin: auto;
+}
+.music > img.play {
+    animation: music_disc 4s linear infinite;
+}
+@keyframes music_disc {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* page bg */
+
+.page {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
+.page > .bg {
+    position: absolute;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* page1 */
+
+#page1 {
+    display: block;
+}
+#page1 > .bg {
+    background: url('./images/p1_bg.jpg') no-repeat center center;
+    background-size: 100%;
+}
+#page1 > .p1_lantern {
+    position: absolute;
+    top: -3.4%;
+    right: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 45vw;
+    height: 71.2vh;
+    margin: auto;
+    padding-top: 31vh;
+
+    text-align: center;
+
+    color: #fff;
+    background: url('./images/p1_lantern.png') no-repeat center bottom;
+    background-size: 100%;
+
+    font-size: 3.506rem;
+}
+#page1 > .p1_lantern:before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 30vw;
+    height: 30vw;
+    margin: auto;
+
+    content: "";
+    animation: p1_lantern .5s infinite alternate;
+
+    opacity: .5;
+    border-radius: 50%;
+    background: #d60b3b;
+    box-shadow: 0 0 10vw 10vw #d60b3b;
+}
+@keyframes p1_lantern {
+    0% {
+        transform: scale(.8, .8);
+
+        opacity: .5;
+    }
+    100% {
+        opacity: .8;
+    }
+}
+#page1 > .p1_immoc {
+    position: absolute;
+    right: 0;
+    bottom: 9vh;
+    left: 0;
+
+    width: 27.656vw;
+    height: 18.63vh;
+    margin: auto;
+
+    background: url('./images/p1_imooc.png') no-repeat center center;
+    background-size: 100%;
+}
+#page1 > .p1_words {
+    position: absolute;
+    right: 0;
+    bottom: 48px;
+    left: 0;
+
+    text-align: center;
+
+    color: #231815;
+
+    font-size: 2.134rem;
+}
+
+/* page2 */
+
+#page2 {
+    display: none;
+
+    transition: .5s;
+}
+#page2.fadeOut {
+    transform: translate(0, -100%);
+
+    opacity: .3;
+}
+#page2 > .bg_loading {
+    z-index: 4;
+
+    animation: p2_bg_loading 1s linear forwards;
+
+    background: #ef1639;
+}
+@keyframes p2_bg_loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+#page2 > .bg {
+    background: url('./images/p2_bg.jpg') no-repeat center center;
+    background-size: 100%;
+}
+#page2 > .p2_circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 59.375vw;
+    height: 59.375vw;
+    margin: auto;
+
+    animation: p2_circle_outer 1s linear 3s infinite;
+
+    border-radius: 50%;
+    background: url('./images/p2_circle_outer.png') no-repeat center center;
+    background-size: 100%;
+}
+@keyframes p2_circle_outer {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+#page2 > .p2_circle:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 45.375vw;
+    height: 45.375vw;
+    margin: auto;
+
+    content: "";
+    animation: p2_circle_middle 1s linear 2s infinite;
+
+    border-radius: 50%;
+    background: url('./images/p2_circle_middle.png') no-repeat center center;
+    background-size: 100%;
+}
+@keyframes p2_circle_middle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+#page2 > .p2_circle:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 39.975vw;
+    height: 39.975vw;
+    margin: auto;
+
+    content: "";
+    animation: p2_circle_inner 1s linear 1s infinite;
+
+    border-radius: 50%;
+    background: url('./images/p2_circle_inner.png') no-repeat center center;
+    background-size: 100%;
+}
+@keyframes p2_circle_inner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-1080deg);
+    }
+}
+#page2 > .p2_2016 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 27.5vw;
+    height: 6.24vh;
+    margin: auto;
+
+    background: url('./images/p2_2016.png') no-repeat center center;
+    background-size: 100%;
+}
+
+/* page3 */
+
+#page3 {
+    display: none;
+
+    transition: .5s;
+}
+#page3.fadeIn {
+    transform: translate(0, -100%);
+}
+#page3 > .bg {
+    background: url('./images/p3_bg.jpg') no-repeat center center;
+    background-size: 100%;
+}
+#page3 > .p3_logo {
+    position: absolute;
+    top: 7.82vh;
+    right: 0;
+    left: 0;
+
+    width: 34.687vw;
+    height: 6.327vh;
+    margin: auto;
+
+    background: url('./images/p3_logo.png') no-repeat center center;
+    background-size: 100%;
+}
+#page3 > .p3_title {
+    position: absolute;
+    top: 21vh;
+    right: 0;
+    left: 0;
+
+    width: 48.125vw;
+    height: 50vh;
+    margin: auto;
+
+    background: url('./images/p3_title.png') no-repeat center center;
+    background-size: 100%;
+}
+#page3 > .p3_second {
+    position: absolute;
+    top: 21vh;
+    left: 3.75vw;
+
+    width: 22.8125vw;
+    height: 41.652vh;
+
+    background: url('./images/p3_couplet_second.png') no-repeat center center;
+    background-size: 100%;
+}
+#page3 > .p3_first {
+    position: absolute;
+    top: 21vh;
+    right: 3.75vw;
+
+    width: 22.8125vw;
+    height: 41.652vh;
+
+    background: url('./images/p3_couplet_first.png') no-repeat center center;
+    background-size: 100%;
+}
+#page3 > .p3_blessing {
+    position: absolute;
+    right: 0;
+    bottom: 10vh;
+    left: 0;
+
+    width: 32vw;
+    height: 32vw;
+    margin: auto;
+
+    animation: p3_blessing 2s linear infinite;
+
+    border-radius: 50%;
+    background: url('./images/p3_blessing.png') no-repeat center center;
+    background-size: 100%;
+}
+@keyframes p3_blessing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
